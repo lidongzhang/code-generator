@@ -1,0 +1,20 @@
+功能说明：
+
+
+项目打包及使用：
+    1、使用maven对项目打包
+    2、执行generatorApp.sh文件
+        执行后会先删除app目录，然后创app目录，把包、配置文件、模版拷入此目录
+    3、在app目录下执行 java -jar code-generator-1.1.jar
+       操作生成代码后会在app目录下面生成一个out的文件夹，里面就是生成的所有代码
+
+
+功能说明：
+    此程序主要根据数据库反射生成:
+    1、支持mybatis的mapper文件、dao文件、实体文件
+    2、service\xxinterface.java
+              impl\xximpl.java
+    3、controller\xxController.java
+    4、app\menu\config.json
+
+    以上生成的文件除 1 以外都需要项目框架的支持。

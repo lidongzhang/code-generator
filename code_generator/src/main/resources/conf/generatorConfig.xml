@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--
+    <classPathEntry location="/Users/zhanglidong/.m2/repository/mysql/mysql-connector-java/5.1.29/mysql-connector-java-5.1.29.jar" />
+   -->
+    <context defaultModelType="flat" id="MysqlContext" targetRuntime="MyBatis3">
+        <property name="beginningDelimiter" value="`" />
+        <property name="endingDelimiter" value="`" />
+        <property name="useToStringFromRoot" value="true" />
+        <plugin type="com.adong.mybatis.generator.plugins.core.ToStringPlugin" />
+        <plugin type="com.adong.mybatis.generator.plugins.core.ExtendPlugin" />
+        <plugin type="com.adong.mybatis.generator.plugins.core.PaginationPlugin" />
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+        <jdbcConnection connectionURL="jdbc:sqlserver://10.211.55.3:1433;DataBaseName=test" driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" password="sa,123" userId="sa" />
+        <javaModelGenerator targetPackage="app.mybatis.entity" targetProject="out/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="out/resources" />
+        <javaClientGenerator targetPackage="app.mybatis.dao" targetProject="out/java" type="XMLMAPPER" />
+        <table tableName="auto_test_1" domainObjectName="Auto_test_1">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="id" identity="true" sqlStatement="SqlServer" />
+            <columnOverride column="c8" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+    </context>
+</generatorConfiguration>

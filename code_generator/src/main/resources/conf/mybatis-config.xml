@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="LOG4J" />
+    </settings>
+    <!--jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true-->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+                <property name="url" value="jdbc:sqlserver://10.211.55.3:1433;DataBaseName=test" />
+                <property name="username" value="root" />
+                <property name="password" value="sa,123" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="test/xml/T1Mapper.xml" />
+    </mappers>
+</configuration>
